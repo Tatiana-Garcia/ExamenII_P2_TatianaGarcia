@@ -12,9 +12,16 @@ import java.util.ArrayList;
  */
 public class Deporte {
     private ArrayList<Torneo> torneos = new ArrayList();
+    private String nombre; 
 
     public Deporte() {
+        
     }
+
+    public Deporte(String nombre) {
+        this.nombre = nombre;
+    }
+    
     
 
     public ArrayList<Torneo> getTorneos() {
@@ -24,10 +31,21 @@ public class Deporte {
     public void setTorneos(ArrayList<Torneo> torneos) {
         this.torneos = torneos;
     }
-    
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
     @Override
     public String toString() {
-        return "Deporte{" + "torneos=" + torneos + '}';
+        return nombre ;
     }
+    
+    
+    
     
 }

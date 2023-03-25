@@ -4,6 +4,14 @@
  */
 package examenii_p2_tatianagarcia;
 
+import java.util.ArrayList;
+import javax.swing.JFormattedTextField;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
+
 /**
  *
  * @author tatig
@@ -27,22 +35,589 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        pm_menu = new javax.swing.JPopupMenu();
+        listar = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        tabla = new javax.swing.JMenuItem();
+        jd_equipos = new javax.swing.JDialog();
+        jPanel8 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
+        jd_addsport = new javax.swing.JDialog();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        jb_add = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        tx_nombre = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        X = new javax.swing.JLabel();
+        jd_addtorneo = new javax.swing.JDialog();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        X1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        tx_torneo = new javax.swing.JTextField();
+        cb_period = new javax.swing.JComboBox<>();
+        jb_add2 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jd_addteam = new javax.swing.JDialog();
+        jd_addpartido = new javax.swing.JDialog();
+        bg = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jt = new javax.swing.JTree();
+        jPanel1 = new javax.swing.JPanel();
+        jb_deporte = new javax.swing.JButton();
+        jb_equipo = new javax.swing.JButton();
+        jb_partido = new javax.swing.JButton();
+        jb_torneo = new javax.swing.JButton();
+
+        listar.setText("Listar Equipos Participantes");
+        listar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listarActionPerformed(evt);
+            }
+        });
+        pm_menu.add(listar);
+        pm_menu.add(jSeparator1);
+
+        tabla.setText("Mostrar Tabla de Posiciones");
+        pm_menu.add(tabla);
+
+        jPanel8.setBackground(new java.awt.Color(204, 204, 204));
+
+        jPanel7.setBackground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 576, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 456, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout jd_equiposLayout = new javax.swing.GroupLayout(jd_equipos.getContentPane());
+        jd_equipos.getContentPane().setLayout(jd_equiposLayout);
+        jd_equiposLayout.setHorizontalGroup(
+            jd_equiposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jd_equiposLayout.setVerticalGroup(
+            jd_equiposLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jd_addsport.setModal(true);
+        jd_addsport.setUndecorated(true);
+        jd_addsport.setResizable(false);
+        jd_addsport.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+
+        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
+
+        jb_add.setBackground(new java.awt.Color(0, 0, 102));
+        jb_add.setForeground(new java.awt.Color(204, 204, 204));
+        jb_add.setText("Agregar");
+        jb_add.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_addActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel1.setText("Agregar Deporte");
+
+        tx_nombre.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Nombre:");
+
+        X.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        X.setForeground(new java.awt.Color(204, 204, 204));
+        X.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        X.setText("X");
+        X.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                XMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap(44, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(28, 28, 28)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(tx_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29))
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                            .addComponent(jb_add)
+                            .addContainerGap())
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                            .addComponent(jLabel1)
+                            .addGap(101, 101, 101)))))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(X, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addComponent(X, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tx_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2))
+                .addGap(58, 58, 58)
+                .addComponent(jb_add)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(16, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jd_addsport.getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 350, -1));
+
+        jd_addtorneo.setModal(true);
+        jd_addtorneo.setUndecorated(true);
+        jd_addtorneo.setResizable(false);
+
+        jPanel5.setBackground(new java.awt.Color(204, 204, 204));
+
+        jPanel6.setBackground(new java.awt.Color(0, 0, 0));
+
+        X1.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
+        X1.setForeground(new java.awt.Color(204, 204, 204));
+        X1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        X1.setText("X");
+        X1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                X1MouseClicked(evt);
+            }
+        });
+
+        jLabel3.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel3.setText("Agregar Torneo");
+
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Nombre:");
+
+        tx_torneo.setForeground(new java.awt.Color(0, 0, 0));
+
+        cb_period.setBackground(new java.awt.Color(0, 0, 51));
+        cb_period.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Q1", "Q2", "Q4", "Q5" }));
+
+        jb_add2.setBackground(new java.awt.Color(0, 0, 102));
+        jb_add2.setForeground(new java.awt.Color(204, 204, 204));
+        jb_add2.setText("Agregar");
+        jb_add2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_add2ActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Periodo a  Agregar");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(X1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(120, 120, 120))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(45, 45, 45)))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(tx_torneo, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(60, Short.MAX_VALUE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(0, 0, Short.MAX_VALUE))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jb_add2)
+                .addContainerGap())
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(126, 126, 126)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(cb_period, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(X1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jLabel3)))
+                .addGap(47, 47, 47)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tx_torneo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(30, 30, 30)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(cb_period, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
+                .addComponent(jb_add2)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jd_addtorneoLayout = new javax.swing.GroupLayout(jd_addtorneo.getContentPane());
+        jd_addtorneo.getContentPane().setLayout(jd_addtorneoLayout);
+        jd_addtorneoLayout.setHorizontalGroup(
+            jd_addtorneoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jd_addtorneoLayout.setVerticalGroup(
+            jd_addtorneoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jd_addteamLayout = new javax.swing.GroupLayout(jd_addteam.getContentPane());
+        jd_addteam.getContentPane().setLayout(jd_addteamLayout);
+        jd_addteamLayout.setHorizontalGroup(
+            jd_addteamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jd_addteamLayout.setVerticalGroup(
+            jd_addteamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jd_addpartidoLayout = new javax.swing.GroupLayout(jd_addpartido.getContentPane());
+        jd_addpartido.getContentPane().setLayout(jd_addpartidoLayout);
+        jd_addpartidoLayout.setHorizontalGroup(
+            jd_addpartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jd_addpartidoLayout.setVerticalGroup(
+            jd_addpartidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        bg.setBackground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Torneos");
+        javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Q1");
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Q2");
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Q4");
+        treeNode1.add(treeNode2);
+        treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("Q5");
+        treeNode1.add(treeNode2);
+        jt.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jtMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jt);
+
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+
+        jb_deporte.setText("Agregar Deporte");
+        jb_deporte.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_deporteActionPerformed(evt);
+            }
+        });
+
+        jb_equipo.setText("Agregar Equipo");
+
+        jb_partido.setText("Agregar Partidos");
+
+        jb_torneo.setText("Agregar Torneo");
+        jb_torneo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_torneoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jb_deporte)
+                    .addComponent(jb_equipo)
+                    .addComponent(jb_partido)
+                    .addComponent(jb_torneo))
+                .addContainerGap(53, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(75, 75, 75)
+                .addComponent(jb_deporte)
+                .addGap(75, 75, 75)
+                .addComponent(jb_equipo)
+                .addGap(75, 75, 75)
+                .addComponent(jb_partido)
+                .addGap(75, 75, 75)
+                .addComponent(jb_torneo)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout bgLayout = new javax.swing.GroupLayout(bg);
+        bg.setLayout(bgLayout);
+        bgLayout.setHorizontalGroup(
+            bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(bgLayout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(362, Short.MAX_VALUE))
+        );
+        bgLayout.setVerticalGroup(
+            bgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(bgLayout.createSequentialGroup()
+                .addGap(48, 48, 48)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(69, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 480, Short.MAX_VALUE)
+            .addComponent(bg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jb_deporteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_deporteActionPerformed
+        Deporte();
+    }//GEN-LAST:event_jb_deporteActionPerformed
+
+    private void jb_addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_addActionPerformed
+        // TODO add your handling code here:try {
+        try{    
+            if (!"".equals(tx_nombre.getText())
+                    
+                    ) {
+                //añardir al arraylist 
+                
+                deporte.add(new Deporte(tx_nombre.getText()));
+                JOptionPane.showMessageDialog(this, "Deporte agregado con exito");
+                
+                Actarbol(); 
+                
+                //Set text and items to "";
+                tx_nombre.setText("");
+                
+            }else{
+                JOptionPane.showMessageDialog(null, "Llenar todos los campos");
+            }
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "No se pudieron agregar los datos correctamente");
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jb_addActionPerformed
+
+    private void jb_torneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_torneoActionPerformed
+        Torneo(); 
+    }//GEN-LAST:event_jb_torneoActionPerformed
+
+    private void XMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_XMouseClicked
+        jd_addsport.dispose();
+    }//GEN-LAST:event_XMouseClicked
+
+    private void X1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_X1MouseClicked
+        jd_addtorneo.dispose();
+    }//GEN-LAST:event_X1MouseClicked
+
+    private void jb_add2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_add2ActionPerformed
+        try{    
+            if (!"".equals(tx_torneo.getText())
+                    
+                    ) {
+                //añardir al arraylist 
+                if (nodo.getUserObject()instanceof Deporte) {
+                    for (Deporte deporte1 : deporte) {
+                        if (nodo.getUserObject().equals(deporte1)) {
+                            
+                            t= new Torneo(tx_torneo.getText(), cb_period.getSelectedItem());
+                            deporte1.getTorneos()
+                                    .add(t);
+                            Q = cb_period.getSelectedIndex();
+                            JOptionPane.showMessageDialog(jd_addtorneo, "Torneo agregado con exito");
+                            ActTarbol(); 
+                        }
+                    }
+                    
+                }else{
+                    JOptionPane.showMessageDialog(jd_addtorneo, "Se debe seleccionar un deporte en el JTree");
+                }
+                
+                
+                
+                //Set text and items to "";
+                tx_torneo.setText("");
+                
+            }else{
+                JOptionPane.showMessageDialog(null, "Llenar todos los campos");
+            }
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "No se pudieron agregar los datos correctamente");
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jb_add2ActionPerformed
+
+    private void jtMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jtMouseClicked
+        int row = jt.getClosestRowForLocation(
+                    evt.getX(), evt.getY());
+            jt.setSelectionRow(row);
+        
+        Object v1= jt.getSelectionPath().getLastPathComponent();
+            nodo = (DefaultMutableTreeNode) v1;
+            
+        if (evt.isMetaDown()) {
+            
+            if (nodo.getUserObject() instanceof Torneo) {
+                pm_menu.show(evt.getComponent(), evt.getX(), evt.getY());
+                
+            }
+            
+        }
+    
+    }//GEN-LAST:event_jtMouseClicked
+
+    private void listarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listarActionPerformed
+        Equipos();
+    }//GEN-LAST:event_listarActionPerformed
+
+    private void Actarbol(){
+        DefaultTreeModel arbol = (DefaultTreeModel) jt.getModel();
+        DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) arbol.getRoot();
+        for (int i = 0; i < raiz.getChildCount(); i++) {
+            DefaultMutableTreeNode periodo = (DefaultMutableTreeNode) raiz.getChildAt(i);
+            DefaultMutableTreeNode deportes = new DefaultMutableTreeNode(
+                    deporte.get(deporte.size()-1));
+            periodo.add(deportes);
+        }
+        arbol.reload();
+    }
+    private void ActTarbol(){///Añadir al arbol el nodo de torneos
+        DefaultTreeModel arbol = (DefaultTreeModel) jt.getModel();
+        DefaultMutableTreeNode periodo = (DefaultMutableTreeNode)nodo;
+            
+        DefaultMutableTreeNode torneos = new DefaultMutableTreeNode(
+                t);
+        periodo.add(torneos);
+        
+        arbol.reload();
+    }
+    private void Torneo(){
+        jd_addtorneo.pack();
+        jd_addtorneo.setLocationRelativeTo(this);
+        jd_addtorneo.setModal(true);
+        jd_addtorneo.setVisible(true);
+    }
+    private void Deporte(){
+        jd_addsport.pack();
+        jd_addsport.setLocationRelativeTo(this);
+        jd_addsport.setModal(true);
+        jd_addsport.setVisible(true);
+    }
+    private void Equipos(){
+        jd_equipos.pack();
+        jd_equipos.setLocationRelativeTo(this);
+        jd_equipos.setModal(true);
+        jd_equipos.setVisible(true);
+    }
     /**
      * @param args the command line arguments
      */
@@ -77,7 +652,51 @@ public class Main extends javax.swing.JFrame {
             }
         });
     }
-
+    ArrayList<Deporte> deporte = new ArrayList();
+    
+    //////
+    ArrayList<Torneo> torneo = new ArrayList();
+    ArrayList<Partidos> partidos = new ArrayList();
+    ArrayList<Equipos> equipos = new ArrayList();
+    DefaultMutableTreeNode nodo; 
+    int Q;
+    Torneo t; 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel X;
+    private javax.swing.JLabel X1;
+    private javax.swing.JPanel bg;
+    private javax.swing.JComboBox<String> cb_period;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JButton jb_add;
+    private javax.swing.JButton jb_add2;
+    private javax.swing.JButton jb_deporte;
+    private javax.swing.JButton jb_equipo;
+    private javax.swing.JButton jb_partido;
+    private javax.swing.JButton jb_torneo;
+    private javax.swing.JDialog jd_addpartido;
+    private javax.swing.JDialog jd_addsport;
+    private javax.swing.JDialog jd_addteam;
+    private javax.swing.JDialog jd_addtorneo;
+    private javax.swing.JDialog jd_equipos;
+    private javax.swing.JTree jt;
+    private javax.swing.JMenuItem listar;
+    private javax.swing.JPopupMenu pm_menu;
+    private javax.swing.JMenuItem tabla;
+    private javax.swing.JTextField tx_nombre;
+    private javax.swing.JTextField tx_torneo;
     // End of variables declaration//GEN-END:variables
 }
