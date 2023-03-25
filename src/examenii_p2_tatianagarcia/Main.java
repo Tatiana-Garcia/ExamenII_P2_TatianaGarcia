@@ -984,7 +984,7 @@ public class Main extends javax.swing.JFrame {
         File fichero = null;
         FileInputStream entrada = null;
         ObjectInputStream objeto = null; 
-        if (!nodo.isRoot()) {
+        if (!nodo.isRoot()&&nodo != null) {
             try {
                 JFileChooser jfc = new JFileChooser();
                 FileNameExtensionFilter filtro = 
@@ -1000,17 +1000,9 @@ public class Main extends javax.swing.JFrame {
 
                    admDeporte temp=(admDeporte)objeto.readObject();
                    
-                   Object o = (temp.getDeportes().get(0));
+                   Deporte o = (temp.getDeportes().get(0));
                    
-                   DefaultTreeModel arbol = (DefaultTreeModel) jt.getModel();
-                   DefaultMutableTreeNode node = (DefaultMutableTreeNode)o;
-                   nodo.add(node);
-                   arbol.reload();
-                   
-                   //nodo.setModel();
-
-
-
+                   Arbol(o);
                 } //fin if
 
             } catch (Exception e) {
@@ -1065,12 +1057,13 @@ public class Main extends javax.swing.JFrame {
                     barra = new admBarra(bar);
                     process =new Thread(barra);
                     process.start();
+                    
 
                     bw.writeObject(d);
                     bw.flush();
 
                     JOptionPane.showMessageDialog(this, 
-                            "Archivo guardado exitosamente");  
+                            "Guardando archivo...");  
 
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -1113,6 +1106,13 @@ public class Main extends javax.swing.JFrame {
                 new DefaultComboBoxModel(array.toArray());
         combo.setModel(modelo);
         
+    }
+    
+    private void Arbol(Deporte o){
+        DefaultTreeModel arbol = (DefaultTreeModel) jt.getModel();
+                   DefaultMutableTreeNode node = new DefaultMutableTreeNode(o);
+                   nodo.add(node);
+                   arbol.reload();
     }
     private void Actarbol(){
         DefaultTreeModel arbol = (DefaultTreeModel) jt.getModel();
