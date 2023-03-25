@@ -1,8 +1,9 @@
 package examenii_p2_tatianagarcia;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Torneo {
+public class Torneo implements Serializable{
     private String nombre; 
     private ArrayList<Equipos> equipos = new ArrayList();
     private ArrayList<Partidos> partidos = new ArrayList();

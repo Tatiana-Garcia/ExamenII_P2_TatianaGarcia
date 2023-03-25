@@ -1,16 +1,18 @@
 
 package examenii_p2_tatianagarcia;
 
-public class Equipos {
+import java.io.Serializable;
+
+public class Equipos implements Serializable{
     private String nombre; 
     private int puntos; 
 
     public Equipos() {
     }
 
-    public Equipos(String nombre, int puntos) {
+    public Equipos(String nombre) {
         this.nombre = nombre;
-        this.puntos = puntos;
+        //this.puntos = puntos;
     }
 
     public String getNombre() {
@@ -31,7 +33,7 @@ public class Equipos {
 
     @Override
     public String toString() {
-        return "Equipos{" + "nombre=" + nombre + ", puntos=" + puntos + '}';
+        return nombre ;
     }
    
 }

@@ -1,7 +1,9 @@
 
 package examenii_p2_tatianagarcia;
 
-public class Partidos {
+import java.io.Serializable;
+
+public class Partidos implements Serializable{
     private String equipo1; 
     private String equipo2; 
     private int equi1_puntos; 
@@ -11,7 +13,11 @@ public class Partidos {
     }
     
 
-    public Partidos(String equipo1, String equipo2, int equi1_puntos, int equi2_puntos) {
+    public Partidos(String equipo1, String equipo2) {
+        this.equipo1 = equipo1;
+        this.equipo2 = equipo2;
+    }
+    public Partidos(String equipo1, String equipo2,int equi1_puntos,int equi2_puntos) {
         this.equipo1 = equipo1;
         this.equipo2 = equipo2;
         this.equi1_puntos = equi1_puntos;
@@ -52,7 +58,7 @@ public class Partidos {
 
     @Override
     public String toString() {
-        return "Partidos{" + "equipo1=" + equipo1 + ", equipo2=" + equipo2 + ", equi1_puntos=" + equi1_puntos + ", equi2_puntos=" + equi2_puntos + '}';
+        return equipo1 + " vs " + equipo2 ;
     }
     
 }

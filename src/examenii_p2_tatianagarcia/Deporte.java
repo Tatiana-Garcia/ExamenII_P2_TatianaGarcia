@@ -4,13 +4,14 @@
  */
 package examenii_p2_tatianagarcia;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author tatig
  */
-public class Deporte {
+public class Deporte implements Serializable{
     private ArrayList<Torneo> torneos = new ArrayList();
     private String nombre; 
 
