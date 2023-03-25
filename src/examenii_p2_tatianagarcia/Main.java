@@ -1000,9 +1000,12 @@ public class Main extends javax.swing.JFrame {
 
                    admDeporte temp=(admDeporte)objeto.readObject();
                    
-                   Deporte o = (temp.getDeportes().get(0));
+                   Object o = (temp.getDeportes().get(0));
                    
-                   Arbol(o);
+                   DefaultTreeModel arbol = (DefaultTreeModel) jt.getModel();
+                   DefaultMutableTreeNode node = new DefaultMutableTreeNode(o);
+                   nodo.add(node);
+                   arbol.reload();
                 } //fin if
 
             } catch (Exception e) {
@@ -1108,11 +1111,8 @@ public class Main extends javax.swing.JFrame {
         
     }
     
-    private void Arbol(Deporte o){
-        DefaultTreeModel arbol = (DefaultTreeModel) jt.getModel();
-                   DefaultMutableTreeNode node = new DefaultMutableTreeNode(o);
-                   nodo.add(node);
-                   arbol.reload();
+    private void Arbol(){
+        
     }
     private void Actarbol(){
         DefaultTreeModel arbol = (DefaultTreeModel) jt.getModel();
